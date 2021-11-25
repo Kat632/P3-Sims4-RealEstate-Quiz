@@ -1,6 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<title>The Sims 4 Real Estate Quiz</title>
+</head>
+
 <body>
-    <button onclick="window.location.reload()">Run Program</button>
-    <div id="terminal"></div>
+    <!-- button to refresh the page/game terminal -->
+    <button id="playbtn" onclick="window.location.reload()">PLAY GAME</button>
+
+    <div id = "terminalcontainer">
+        <div id="terminal"></div>
+    </div>
+
+    <!-- copyright text -->
+    <div id="copy">
+        &copy; Katherine Biggs
+    </div>
 
     <script>
         var term = new Terminal({

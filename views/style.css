@@ -1,0 +1,28 @@
+body {
+    background-image: url(sims4wallpaper.jpg);
+    background-size: cover;
+    margin: 0px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#terminal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  CREDIT: Box-shadow #31 from https://getcssscan.com/css-box-shadow-examples */
+#playbtn {
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #4c5c98;
+    color: #fefefe;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+
