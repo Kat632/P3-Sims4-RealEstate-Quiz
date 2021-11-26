@@ -4,6 +4,7 @@
 
 import gspread
 from google.oauth2.service_account import Credentials
+import time
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -84,3 +85,68 @@ print('''\u001b[32m
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%.        %@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 \u001b[0m''')
+
+print("Hello!  Welcome to the Sims 4 Real Estate Quiz...\n")
+print("===================================================")
+name = input("Please enter your name: ")
+time.sleep(1)
+print("===================================================")
+print("Thank you for stopping by, " + name)
+
+class Question:
+     def __init__(self, prompt, answer):
+          self.prompt = prompt
+          self.answer = answer
+
+question_prompts = [
+     "Who lives at Cypress Terrace in Willowcreek?\n \
+     (a)The Spencer-Kim-Lewis family\n \
+     (b)The Goth family\n \
+     (c)The Pancakes Family\n ",
+
+     "What is the neighbourhood where the Pancake family live called?\n \
+     (a)Garden Essence\n \
+     (b)Courtyard Lane\n \
+     (c)Sage Estates\n ",
+
+     "Who lives at Ophelia Villa?\n \
+     (a)The Goth Family\n \
+     (b)The Landgraab Family\n \
+     (c)Judith Ward\n ",
+]
+
+questions = [
+    Question(question_prompts[0], "a"),
+    Question(question_prompts[1], "b"),
+    Question(question_prompts[2], "a")
+]
+
+def run_quiz(questions):
+     score = 0
+     for question in questions:
+          answer = input(question.prompt).lower()
+          if answer == question.answer:
+               score += 1
+     print("you got", score, "out of", len(questions))
+
+
+def start_game():
+    """
+    Function to allow the play to choose what they want to do
+    """
+    print("What would you like to do today?\n")
+    answer = (input("a) Start a new game\nb) View the leaderboard\nc)Exit\n"))
+
+    if answer == ("a"): 
+       print("Starting a new quiz...")
+       run_quiz(questions)
+    if answer == ("b"): 
+       print("Fetching the leaderboard...")
+       print(data)
+    else: 
+       print("Exiting the game.  Thank you for playing, " + name)
+       exit()
+
+start_game()
+
+

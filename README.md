@@ -101,7 +101,7 @@ Arising from user stories
 ### The Skeleton Plane
 #### Wireframe mock-ups
 
-Given that the application will be run within a terminal emulator provided within the template, there are limited options available with regards to the layout of the webpage itself. Early on within the development of the theme, I located a suitable background graphic on iStock. To position the terminal appropriately for the background graphic, and keeping user experience in mind, I decided to centre the terminal horizontally on the screen. This positions the terminal window within the lower part of the rail around the ship in the background graphic. The run program button was centrally positioned to above the terminal window to emphasis its importance.
+Given that the application will be run within a terminal emulator provided within the template, there are limited options available with regards to the layout of the webpage itself. Early on within the development of the theme, I located a suitable background graphic on iStock. To position the terminal appropriately for the background graphic, and keeping user experience in mind, I decided to centre the terminal horizontally on the screen. The run program button was centrally positioned to above the terminal window to emphasis its importance.
 
 ![Home Page Wireframe]()
 
@@ -324,6 +324,7 @@ I was informed of a method to clear the terminal by another student on the cours
 
 #### Background Image
 
+The background image was chosen from a selection of Sims 4 wallpapers at [Wallpaper Access](https://wallpaperaccess.com/the-sims-4#google_vignette).  I chose this image because it is instantly recognisable as being related to the Sims 4.
 
 
 #### Stack Overflow
