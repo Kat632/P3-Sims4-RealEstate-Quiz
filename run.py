@@ -5,6 +5,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import time
+from game.functions import clear_terminal, game_over
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -86,12 +87,12 @@ print('''\u001b[32m
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 \u001b[0m''')
 
-print("Hello!  Welcome to the Sims 4 Real Estate Quiz...\n")
+print("Sul sul!  Welcome to the Sims 4 Real Estate Quiz...\n")
 print("===================================================")
 name = input("Please enter your name: ")
 time.sleep(1)
-print("===================================================")
 print("Thank you for stopping by, " + name)
+print("===================================================")
 
 class Question:
      def __init__(self, prompt, answer):
@@ -127,26 +128,33 @@ def run_quiz(questions):
           answer = input(question.prompt).lower()
           if answer == question.answer:
                score += 1
+               print("Well done, you are correct!")
+          else:
+             print("Sorry, you are incorrect!")
      print("you got", score, "out of", len(questions))
 
 
 def start_game():
     """
-    Function to allow the play to choose what they want to do
+    Function to allow the player to choose what they want to do
     """
     print("What would you like to do today?\n")
     answer = (input("a) Start a new game\nb) View the leaderboard\nc)Exit\n"))
 
-    if answer == ("a"): 
-       print("Starting a new quiz...")
+    if answer == ("a"):
+       print("Veena fredishay! Starting a new quiz...")
+       time.sleep(1)
+       clear_terminal()
        run_quiz(questions)
-    if answer == ("b"): 
+    if answer == ("b"):
        print("Fetching the leaderboard...")
+       time.sleep(1)
+       clear_terminal()
        print(data)
-    else: 
-       print("Exiting the game.  Thank you for playing, " + name)
-       exit()
+    else:
+       print("Exiting the game...")
+       time.sleep(1)
+       game_over()
 
 start_game()
-
 
