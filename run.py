@@ -6,6 +6,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import time
 from game.functions import clear_terminal, game_over
+import random
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -114,25 +115,71 @@ question_prompts = [
      (a)The Goth Family\n \
      (b)The Landgraab Family\n \
      (c)Judith Ward\n ",
+
+     "Which Sims are in the BFF household?\n \
+     (a)Miko Ojo, Akira Kibo, and Darling Walsh\n \
+     (b)Maike Haas, Ulrike Faust\n \
+     (c)Travis Scott, Liberty Lee, Summer Holiday\n ",
+
+     "How much is the Goth family home worth at the start of the game?\n \
+     (a)$256,807\n \
+     (b)$254,721\n \
+     (c)$228,639\n ",
+
+     "In which world is Shady Acres one of the neighbourhoods?\n \
+     (a)Oasis Springs\n \
+     (b)Forgotten Hollow\n \
+     (c)Strangerville\n ",
+
+     "In which world do the Partihaus household live?\n \
+     (a)San Myshuno\n \
+     (b)Windenburg\n \
+     (c)Britechester\n ",
+
+     "Who owns the most expensive property in Windenburg?\n \
+     (a)The Villareal Family\n \
+     (b)The Fyres Family\n \
+     (c)The Bjergsen Family\n ",
+
+     "What is the name of the house where the Bjergsen Family live?\n \
+     (a)Bjergsen House\n \
+     (b)The Island\n \
+     (c)The Lighthouse\n ",
+
+     "Who lives at Slipshod Mesquite in Oasis Springs?\n \
+     (a)Johnny Zest\n \
+     (b)George Cahill\n \
+     (c)Salim Benali\n ",
 ]
 
 questions = [
     Question(question_prompts[0], "a"),
     Question(question_prompts[1], "b"),
-    Question(question_prompts[2], "a")
+    Question(question_prompts[2], "a"),
+    Question(question_prompts[3], "c"),
+    Question(question_prompts[4], "b"),
+    Question(question_prompts[5], "c"),
+    Question(question_prompts[6], "b"),
+    Question(question_prompts[7], "a"),
+    Question(question_prompts[8], "c"),
+    Question(question_prompts[9], "a")
 ]
 
 def run_quiz(questions):
      score = 0
+     random.shuffle(questions)
      for question in questions:
           answer = input(question.prompt).lower()
           if answer == question.answer:
                score += 1
+               time.sleep(1)
                print("Well done, you are correct!")
           else:
-             print("Sorry, you are incorrect!")
-     print("you got", score, "out of", len(questions))
+               time.sleep(1)
+               print("Sorry, you are incorrect!")
 
+     print("You got", score, "out of", len(questions))
+     time.sleep(3)
 
 def start_game():
     """
