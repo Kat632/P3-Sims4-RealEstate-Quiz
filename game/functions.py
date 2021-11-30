@@ -18,4 +18,6 @@ def game_over():
 | |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |   
  \____/\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|
 """)
+    
+    print"\nWould you like to commit your score to the leaderboard?"
     sys.exit()
