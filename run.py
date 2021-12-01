@@ -1,14 +1,14 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-
-import gspread
-from google.oauth2.service_account import Credentials
 from datetime import datetime
 import time
 import random
 import os
 import sys
+import gspread
+from google.oauth2.service_account import Credentials
+from tabulate import tabulate
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -26,45 +26,35 @@ data = scores.get_all_values()
 
 
 def clear_terminal():
-    # Clears terminal.
+    """
+    Clears terminal
+    """
     os.system('clear')
 
 
 def game_over():
-    # Prints "Game Over" text and exits game.
+    """
+    Prints "Game Over" text and exits game.
+    """
     print("\nThank you for playing! Dag dag!")
     print("""
- _____                        _____               
+ _____                        _____ 
 |  __ \                      |  _  |               
 | |  \/ __ _ _ __ ___   ___  | | | |_   _____ _ __ 
 | | __ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
-| |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |   
+| |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |
  \____/\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|
 """)
-    
+
     time.sleep(3)
     sys.exit()
 
+
 # datetime object containing current date and time
 now = datetime.now()
-print(now)
-
-
 # dd/mm/YY H:M:S
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-print("date and time =", dt_string)
 
-score = 0
-
-def update_worksheet():
-    """
-    Update leaderboard spreadsheet,
-    add new row with the data provided
-    """
-    leaderboard_worksheet = SHEET.worksheet('scores')
-    leaderboard_worksheet.append_row(values=[[name, score, now]])
-    time.sleep(1)
-    print("Leaderboard updated successfully!\n")
 
 print('''\u001b[32m
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -136,10 +126,12 @@ time.sleep(1)
 print("Thank you for stopping by, " + name)
 print("===================================================")
 
+
 class Question:
     def __init__(self, prompt, answer):
         self.prompt = prompt
         self.answer = answer
+
 
 question_prompts = [
      "Who lives at Cypress Terrace in Willowcreek?\n \
@@ -206,6 +198,7 @@ questions = [
     Question(question_prompts[9], "a")
 ]
 
+
 def run_quiz(questions):
     tic = time.perf_counter()
     score = 0
@@ -213,7 +206,7 @@ def run_quiz(questions):
     for question in questions:
         answer = input(question.prompt).lower()
         if answer not in {'a', 'b', 'c', 'd'}:
-            print('INVALID INPUT!!! Use \'a,\' \'b,\' or \'c\' for your response')
+            print('INVALID! Use \'a,\' \'b,\' or \'c\' for your response')
         elif answer == question.answer:
             score += 1
             time.sleep(1)
@@ -221,7 +214,7 @@ def run_quiz(questions):
         else:
             time.sleep(1)
             print("Sorry, you are incorrect!\n")
-    
+
     toc = time.perf_counter()
     print("You got", score, "out of", len(questions))
     time.sleep(1)
@@ -230,15 +223,19 @@ def run_quiz(questions):
     print("\nWould you like to commit your score to the leaderboard, Y or N?")
     answer_end = input().lower()
     if answer_end == "y":
-         time.sleep(1)
-         print("Thank you.  Adding your score to the leaderboard...")
-         update_worksheet()
+        time.sleep(1)
+        print("Thank you.  Adding your score to the leaderboard...")
+        scores = SHEET.worksheet('scores')
+        scores.append_row(values=[name, score, dt_string])
+        time.sleep(1)
+        print("Leaderboard updated successfully!\n")
     else:
         time.sleep(1)
         print("Ok, thank you for playing, " + name)
         time.sleep(1)
         print("Exiting the game...")
         game_over()
+
 
 def start_game():
     """
@@ -248,19 +245,19 @@ def start_game():
     answer = (input("a) Start a new game\nb) View the leaderboard\nc)Exit\n"))
 
     if answer == ("a"):
-       print("Veena fredishay! Starting a new quiz...")
-       time.sleep(1)
-       clear_terminal()
-       run_quiz(questions)
+        print("Veena fredishay! Starting a new quiz...")
+        time.sleep(1)
+        clear_terminal()
+        run_quiz(questions)
     if answer == ("b"):
-       print("Fetching the leaderboard...")
-       time.sleep(1)
-       clear_terminal()
-       print(data)
+        print("Fetching the leaderboard...")
+        time.sleep(1)
+        clear_terminal()
+        print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
     else:
-       print("Exiting the game...")
-       time.sleep(1)
-       game_over()
+        print("Exiting the game...")
+        time.sleep(1)
+        game_over()
+
 
 start_game()
-
