@@ -52,8 +52,8 @@ def game_over():
 
 # datetime object containing current date and time
 now = datetime.now()
-# dd/mm/YY H:M:S
-dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+# dd/mm/YY H:M
+dt_string = now.strftime("%d/%m/%Y %H:%M")
 
 
 print('''\u001b[32m
@@ -123,6 +123,7 @@ print("Sul sul!  Welcome to the Sims 4 Real Estate Quiz...\n")
 print("===================================================")
 name = input("Please enter your name: ")
 time.sleep(1)
+print("===================================================")
 print("Thank you for stopping by, " + name)
 print("===================================================")
 
@@ -209,13 +210,14 @@ def run_quiz(questions):
             print('INVALID! Use \'a,\' \'b,\' or \'c\' for your response')
         elif answer == question.answer:
             score += 1
-            time.sleep(1)
+            time.sleep(2)
             print("Well done, you are correct!")
         else:
-            time.sleep(1)
+            time.sleep(2)
             print("Sorry, you are incorrect!\n")
 
     toc = time.perf_counter()
+    duration = str(round(toc - tic, 2))
     print("You got", score, "out of", len(questions))
     time.sleep(1)
     print(f"You completed the quiz in {toc - tic:0.4f} seconds")
@@ -226,7 +228,7 @@ def run_quiz(questions):
         time.sleep(1)
         print("Thank you.  Adding your score to the leaderboard...")
         scores = SHEET.worksheet('scores')
-        scores.append_row(values=[name, score, dt_string])
+        scores.append_row(values=[name, score, dt_string, duration])
         time.sleep(1)
         print("Leaderboard updated successfully!\n")
     else:
@@ -254,6 +256,18 @@ def start_game():
         time.sleep(1)
         clear_terminal()
         print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
+        time.sleep(5)
+        print("Would you like to play the game now?\n")
+        answer = (input("Press Y to start the game or any key to exit\n"))
+        if answer == ("y"):
+            print("Veena fredishay! Starting a new quiz...")
+            time.sleep(1)
+            clear_terminal()
+            run_quiz(questions)
+        else:
+            print("Exiting the game...")
+            time.sleep(1)
+            game_over()
     else:
         print("Exiting the game...")
         time.sleep(1)
