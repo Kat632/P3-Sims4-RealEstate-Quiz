@@ -229,6 +229,7 @@ def run_quiz(questions):
         print("Thank you.  Adding your score to the leaderboard...")
         scores = SHEET.worksheet('scores')
         scores.append_row(values=[name, score, dt_string, duration])
+        scores.sort((2, 'des'), (4, 'des'),)
         time.sleep(1)
         print("Leaderboard updated successfully!\n")
     else:
