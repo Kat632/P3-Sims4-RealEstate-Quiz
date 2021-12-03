@@ -151,8 +151,7 @@ question_prompts = [
      (b)Fashion District\n \
      (c)Uptown\n ",
 
-     "What is the name of the house where the Hecking family live \
-     in Brindleton Bay?\n \
+     "What is the name of the house where the Hecking family live?\n \
      (a)Dogpaw Cottage\n \
      (b)Chateau Rosie\n \
      (c)It's A Good House\n ",
