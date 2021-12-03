@@ -203,12 +203,12 @@ questions = [
 def run_quiz(questions):
     tic = time.perf_counter()
     score = 0
-    random.shuffle(questions)
-    for question in questions:
-        answer = input(question.prompt).lower()
-        if answer not in {'a', 'b', 'c', 'd'}:
+    sampled_list = random.sample(questions, 3)
+    for sample in sampled_list:
+        answer = input(sample.prompt).lower()
+        if answer not in {'a', 'b', 'c'}:
             print('INVALID! Use \'a,\' \'b,\' or \'c\' for your response')
-        elif answer == question.answer:
+        elif answer == sample.answer:
             score += 1
             time.sleep(2)
             print("Well done, you are correct!")
