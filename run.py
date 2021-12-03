@@ -77,7 +77,7 @@ print('''\u001b[32m
 
 print("Sul sul!  Welcome to the Sims 4 Real Estate Quiz...\n")
 print('''\u001b[32m===============================================\u001b[0m''')
-name = input("Please enter your name:\n ")
+name = input("Please enter your name:\n")
 time.sleep(1)
 clear_terminal()
 print('''\u001b[32m===============================================\u001b[0m''')
