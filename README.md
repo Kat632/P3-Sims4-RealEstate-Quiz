@@ -270,20 +270,23 @@ A full detailed breakdown of the testing procedures and methodology can be found
 ##### Built in Python Libraries
 
 Several of the built in python libraries were utilised to enable additional functionality within the application.
-##### math ???
 
 ##### time
 The time library was imported to utilise the time.sleep functionality. This enabled me to incorporate specific time delays within the program which adds to the player experience by simulating the time between the player's answer and the computers response. Whilst only a small time delay occurs, I felt that it was a much better experience than the computer response appearing as soon as the user has pressed their answer key. 
 ##### os
-The os library was imported to utilise the os.system and os.name functionality. This enabled me to add functionality to the terminal emulator which allowed me to clear the previous print statements. This provides a clearer and more structured experience for the user.
+The os library was imported to enable me to add functionality to the terminal emulator which allowed me to clear the previous print statements. This provides a clearer and more structured experience for the user.
 ##### random
-The random library was imported to access a number of the built in methods of generating a random selection.
-##### string ???
-.
+The random library was imported to access the built in methods of generating a random selection for the quiz questions.
+##### datetime
+The datetime library was imported so that I could get the date and time of when the user committed their score to the worksheet.  I thought this could be interesting in the future so that other users can see how long a high score has been there for.
+#### tabulate
+The tabulate library was imported so that I could exert some styling on the returned worksheet data and display it in a structured way to the user.
+#### gspread
+The gspread library was imported to enable reading and writing to a worksheet for the purpose of recording the high scores of users.  Gspread was also used in sorting the worksheet data so that only the top ten results are returned to the user.  I relied heavily on the [Gspread documentation]https://docs.gspread.org/_/downloads/en/v4.0.1/pdf/ in order to achieve what I needed.  I could have imported another library like Pandas, but I felt it was unnecessary.
 
 ## Deployment
 
-The site was deployed via Heroku, and the live link can be found here - [Game]()
+The site was deployed via Heroku, and the live link can be found here - [Game](https://the-sims-4-real-estate-quiz.herokuapp.com/).
 
 The project was developed utilising a Code Institute provided template.
 
@@ -292,7 +295,7 @@ The project was developed utilising a Code Institute provided template.
 To deploy the project through Heroku I followed these steps:
 * Sign up / Log in to [Heroku](https://www.heroku.com/)
 * From the main Heroku Dashboard page select 'New' and then 'Create New App'
-* Give the project a name - I entered Calcio-Jack and select a suitable region, then select create app. The name for the app must be unique.
+* Give the project a name - I entered the-sims-4-real-estate-quiz and selected a suitable region, then selected create app. The name for the app must be unique.
 * This will create the app within Heroku and bring you to the deploy tab. From the submenu at the top, navigate to the settings tab.
 * This next step is required for creating the app when using the CI Python Deployment Template. If you created your own program without using the CI Template, you might not need to add a config var.
 * In the config vars section select the reveal config vars button. This will display the current config vars for the app, there should be nothing already there.
@@ -326,6 +329,8 @@ I was informed of a method to clear the terminal by another student on the cours
 
 The background image was chosen from a selection of Sims 4 wallpapers at [Wallpaper Access](https://wallpaperaccess.com/the-sims-4#google_vignette).  I chose this image because it is instantly recognisable as being related to the Sims 4.
 
+The gradient for the background in the html is from [Egg Gradients](https://www.eggradients.com/category/green-blue-gradient) and it is called **Valyrian Steel**.
+
 
 #### Stack Overflow
 
@@ -333,17 +338,25 @@ The background image was chosen from a selection of Sims 4 wallpapers at [Wallpa
 
 #### Haoyi's Programming Blog
 
-Whilst further researching utilising different colours within the terminal I discovered Haoyi's programming blog. Whilst ultimately, I did not use the techniques detailed in the finished app, it did provide me with several ideas on how I could incorporate colours within the terminal. It is worth a read if you are looking at animating or using colour within a terminal window and can be found [here](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html)
+Whilst researching how to use different colours within the terminal I found Haoyi's programming blog which provided me with several ideas on how I could incorporate colours within the terminal. It can be found [here](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 
 #### Wikipedia
 
-Wikipedia was used as a reference point for details of the Sims franchise and details of the various worlds and neighbourhoods in the Sims 4. [The Sims 4](https://en.wikipedia.org/wiki/The_Sims_4)
+Wikipedia was used as a reference point for details of the Sims franchise and details of the various worlds and neighbourhoods in The Sims 4. [The Sims 4](https://en.wikipedia.org/wiki/The_Sims_4).
+
+#### Carl's Sims 4 Guide
+
+Carl's Sims 4 Guide has everything you could possibly need to know about The Sims 4.  I'm a big fan, but I don't know everything and again, I used it for information about the various worlds, neighbourhoods and families in The Sims 4.  [Carl's Sims 4 Guide](https://www.carls-sims-4-guide.com/).
 
 #### ASCII Art
 
 The image used to make the ASCII art was downloaded from [ClipArtMax](https://www.clipartmax.com/max/m2H7d3N4K9K9b1H7/).
 
 The program used to convert the image into ASCII art is at [Many Tools](https://manytools.org/hacker-tools/convert-images-to-ascii-art/)
+
+#### Questions
+
+All of the questions have been written by me.
 
 ### Acknowledgements
 

@@ -64,10 +64,9 @@ def run_instructions():
     print()
     print("1. All you need to do is press a, b or c for your answer.")
     print("2. The program will tell you if you are correct or incorrect.")
-    print("3. The program will add up your scores and let you know the total \
-    at the end of the game.")
-    print("4. The game is also timed, so you will be able to see \
-    how long the quiz took to complete.")
+    print("3. The program will add up your scores and tell the total.")
+    print("4. The program tells you your score at the end.")
+    print("4. The game is also timed.")
     print("5. You will be able to save your score to the leaderboard.")
     print()
     print('''\u001b[32m===========================================\u001b[0m''')
