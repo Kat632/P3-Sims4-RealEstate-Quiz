@@ -225,7 +225,11 @@ This will thank the user for playing the game and hope they come back soon.  Hap
 
 ## Future Enhancements
 
-High scores - It would be a nice addition to the game to develop a scoring system which is based on the time it takes the user to answer each question.
+User data - Usernames would be stored, as well as each individual's scores, so that returning users could play against themselves and try to beat their previous scores.
+
+Further expansion of The Sims 4 - There does not seem to be a Sims 5 game coming out any time soon.  Therefore I anticipate that a few more worlds will be released in the future, meaning that my game could be expanded to incorporate these.
+
+Further questions - At the moment there are 39 questions in the game.  I probably have enough information to write another 30 questions.  A wide variety of questions will result in less repetition of questions each time a user plays the game.
 
 ## Testing
 
@@ -247,11 +251,11 @@ A full detailed breakdown of the testing procedures and methodology can be found
 
 #### Validator Testing
 
-* pep8online.com - I utilised [pep8online.com](http://pep8online.com/) to validate my python code. All python files were checked with no errors reported.
+* pep8online.com - I utilised [pep8online.com](http://pep8online.com/) to validate my python code. All python files were checked with no errors reported, other than 3 trailing white spaces which are caused by the Game Over ASCII art.  I made the decision to leave in the ASCII art because I believe it adds to the feel of the game.
 
 
 * Screenshots of the validator reports are here:
-    * []()
+    * ![Screenshot of the pep8online validator tool results](/assets/pep8online.png "Screenshot of the pep8online validator tool results")
     * []()
     * []()
     * []()
@@ -267,9 +271,8 @@ A full detailed breakdown of the testing procedures and methodology can be found
 
 
 #### Libraries Utilised
-##### Built in Python Libraries
 
-Several of the built in python libraries were utilised to enable additional functionality within the application.
+Several python libraries were utilised to enable additional functionality within the application.
 
 ##### time
 The time library was imported to utilise the time.sleep functionality. This enabled me to incorporate specific time delays within the program which adds to the player experience by simulating the time between the player's answer and the computers response. Whilst only a small time delay occurs, I felt that it was a much better experience than the computer response appearing as soon as the user has pressed their answer key. 
@@ -317,10 +320,11 @@ To deploy the project through Heroku I followed these steps:
 
 ### Code
 
-I was informed of a method to clear the terminal by another student on the course Goran Sigeskog who had found the method in a Python cheat sheet provided by [coding4you](http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf). Goran had used the method successfully within his project. The code is credited within the editscreen.py file. Goran's GitHub can be found [here](https://github.com/gorsig).
+I looked at several different ways of building a quiz before I embarked on the hard coding.  The method that seemed most elegant to me is well-documented on the internet, but I'm crediting this one by Brock Byrdd on [Medium](https://brockbyrdd.medium.com/creating-a-multiple-choice-quiz-in-python-terminal-1c46123b86d5).
 
-#### Difficulty Levels
+I learnt about various ways of timing in Python from this blog article on [Udacity](https://www.udacity.com/blog/2021/09/create-a-timer-in-python-step-by-step-guide.html).
 
+I was informed of a method to clear the terminal by reading a discussion about it on the Code Institute Slack.  The method comes from a Python cheat sheet provided by [coding4you](http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf).
 
 
 ### Content
@@ -353,6 +357,8 @@ Carl's Sims 4 Guide has everything you could possibly need to know about The Sim
 The image used to make the ASCII art was downloaded from [ClipArtMax](https://www.clipartmax.com/max/m2H7d3N4K9K9b1H7/).
 
 The program used to convert the image into ASCII art is at [Many Tools](https://manytools.org/hacker-tools/convert-images-to-ascii-art/)
+
+The Game Over ASCII art is from [here](https://en.rakko.tools/tools/68/).
 
 #### Questions
 
