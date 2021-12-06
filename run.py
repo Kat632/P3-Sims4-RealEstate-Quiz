@@ -60,7 +60,7 @@ def run_instructions():
     """
     Prints the instructions for the game
     """
-    print('''\u001b[32m===============================================\u001b[0m''')
+    print('''\u001b[32m===========================================\u001b[0m''')
     print()
     print("1. All you need to do is press a, b or c for your answer.")
     print("2. The program will tell you if you are correct or incorrect.")
@@ -70,7 +70,7 @@ def run_instructions():
     how long the quiz took to complete.")
     print("5. You will be able to save your score to the leaderboard.")
     print()
-    print('''\u001b[32m===============================================\u001b[0m''')
+    print('''\u001b[32m===========================================\u001b[0m''')
     print()
     print("*****     Simlish Translations     *****")
     print()
@@ -78,7 +78,7 @@ def run_instructions():
     print("          Dag dag = Goodbye             ")
     print("          Veena frendishay = Let's play ")
     print()
-    print('''\u001b[32m===============================================\u001b[0m''')
+    print('''\u001b[32m===========================================\u001b[0m''')
     print()
 
 
@@ -271,7 +271,7 @@ question_prompts = [
      (a)Mele and Alike Kahananui\n \
      (b)Keala Hoapili and Lia Hauata\n \
      (c)Kado, Jenna, Taku and Miki Akiyama\n",
-     
+
      "Who does Francine Spencer live with?\n \
      (a)The Spencer-Kim-Lewis family\n \
      (b)The Greenburg Family\n \
@@ -379,9 +379,11 @@ def run_quiz(questions):
         elif answer == sample.answer:
             score += 1
             time.sleep(2)
+            print()
             print("Well done, you are correct!")
         else:
             time.sleep(2)
+            print()
             print("Sorry, you are incorrect!\n")
 
     toc = time.perf_counter()
@@ -450,7 +452,7 @@ c)View the instructions\nd)Exit\n"))
         print("Fetching the leaderboard...")
         time.sleep(1)
         clear_terminal()
-        print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
+        print(tabulate(data[0:10], headers='firstrow', tablefmt='fancy_grid'))
         time.sleep(5)
         print("Would you like to play the game now?\n")
         answer = (input("Press Y to start the game or any key to exit\n"))
