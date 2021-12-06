@@ -56,6 +56,32 @@ now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M")
 
 
+def run_instructions():
+    """
+    Prints the instructions for the game
+    """
+    print('''\u001b[32m===============================================\u001b[0m''')
+    print()
+    print("1. All you need to do is press a, b or c for your answer.")
+    print("2. The program will tell you if you are correct or incorrect.")
+    print("3. The program will add up your scores and let you know the total \
+    at the end of the game.")
+    print("4. The game is also timed, so you will be able to see \
+    how long the quiz took to complete.")
+    print("5. You will be able to save your score to the leaderboard.")
+    print()
+    print('''\u001b[32m===============================================\u001b[0m''')
+    print()
+    print("*****     Simlish Translations     *****")
+    print()
+    print("          Sul sul = Hello               ")
+    print("          Dag dag = Goodbye             ")
+    print("          Veena frendishay = Let's play ")
+    print()
+    print('''\u001b[32m===============================================\u001b[0m''')
+    print()
+
+
 print('''\u001b[32m
                 @@@@@@@@@@@@@@@@@@@@
                 @@@@@@@@@ * &@@@@@@@
@@ -191,6 +217,106 @@ question_prompts = [
      (b)Selvadorada\n \
      (c)Henford-on-Bagley\n",
 
+     "Where is The Caboose?\n \
+     (a)Brindleton Bay\n \
+     (b)Strangerville\n \
+     (c)Evergreen Harbor\n",
+
+     "Where is Larry's Lagoon?\n \
+     (a)Britechester\n \
+     (b)Brindleton Bay\n \
+     (c)Sulani\n",
+
+     "Where does the Charm household live?\n \
+     (a)Magic Mansion\n \
+     (b)Rock Ridge Canyon\n \
+     (c)Creek Side Corner\n",
+
+     "Who lives in the cheapest property in the game?\n \
+     (a)George Cahill\n \
+     (b)Johnny Zest\n \
+     (c)Vanessa Jeong\n",
+
+     "Who owns the most expensive property in Sims 4?\n \
+     (a)The Bailey-Moon Family\n \
+     (b)Judith Ward\n \
+     (c)The Villareal Family\n",
+
+     "The Crawdad Quarter neighbourhood is in which world?\n \
+     (a)Willow Creek\n \
+     (b)Brindleton Bay\n \
+     (c)Sulani\n",
+
+     "Where is Magnolia Blossom Park?\n \
+     (a)San Myshuno\n \
+     (b)Willow Creek\n \
+     (c)Newcrest\n",
+
+     "Where is The Blue Velvet nightclub?\n \
+     (a)Willow Creek\n \
+     (b)Windenburg\n \
+     (c)San Myshuno\n",
+
+     "Who pays the most rent in San Myshuno?\n \
+     (a)Diego Lobo\n \
+     (b)The Karaoke Legends\n \
+     (c)Victor and Lily Feng\n",
+
+     "Who owns The Gnome's Arms?\n \
+     (a)Candy and Yuki Behr\n \
+     (b)Arun Bheeda and Jesminder Bheeda\n \
+     (c)Sara and Simon Scott\n",
+
+     "Who lives at Journey’s End in Sulani?\n \
+     (a)Mele and Alike Kahananui\n \
+     (b)Keala Hoapili and Lia Hauata\n \
+     (c)Kado, Jenna, Taku and Miki Akiyama\n",
+     
+     "Who does Francine Spencer live with?\n \
+     (a)The Spencer-Kim-Lewis family\n \
+     (b)The Greenburg Family\n \
+     (c)The Harris Family\n",
+
+     "Where is the venue called Waterside Warble?\n \
+     (a)Windenburg\n \
+     (b)San Myshuno\n \
+     (c)Brindleton Bay\n",
+
+     "Who lives at Straud Manor?\n \
+     (a)Count Vladislaus Straud IV\n \
+     (b)Count Vladimir Straud III\n \
+     (c)Sir Vladislaus Strauss IV\n",
+
+     "Who is the A New Start household?\n \
+     (a)Penny Pizzazz\n \
+     (b)Cecilia Kang\n \
+     (c)Vanessa Jeong\n",
+
+     "Who lives at Dock Den in Windenburg?\n \
+     (a)Brent and Brant Hecking\n \
+     (b)Candy and Yuki Behr\n \
+     (c)Joaquin Le Chien, Sergio Romeo\n",
+
+     "Parched Prospect is a neighbourhood in which world?\n \
+     (a)Strangerville\n \
+     (b)Oasis Springs\n \
+     (c)Sulani\n",
+
+     "The missing housemate: Marcus Flex, Pablo Rocca, Jade Rosa and ???\n \
+     (a)Eva Capricciosa\n \
+     (b)Sergio Romeo\n \
+     (c)Jules Rico\n",
+
+     "Who lives at Pigulock Manor?\n \
+     (a)The Watson Family\n \
+     (b)The Tinker Family\n \
+     (c)The Scott Family\n",
+
+     "What is the name of the child in the Bailey-Moon family?\n \
+     (a)Blue\n \
+     (b)Yellow\n \
+     (c)Orange\n",
+
 ]
 
 questions = [
@@ -213,6 +339,26 @@ questions = [
     Question(question_prompts[16], "b"),
     Question(question_prompts[17], "a"),
     Question(question_prompts[18], "c"),
+    Question(question_prompts[19], "c"),
+    Question(question_prompts[20], "a"),
+    Question(question_prompts[21], "b"),
+    Question(question_prompts[22], "c"),
+    Question(question_prompts[23], "b"),
+    Question(question_prompts[24], "a"),
+    Question(question_prompts[25], "b"),
+    Question(question_prompts[26], "a"),
+    Question(question_prompts[27], "c"),
+    Question(question_prompts[28], "c"),
+    Question(question_prompts[29], "a"),
+    Question(question_prompts[30], "c"),
+    Question(question_prompts[31], "b"),
+    Question(question_prompts[32], "a"),
+    Question(question_prompts[33], "b"),
+    Question(question_prompts[34], "c"),
+    Question(question_prompts[35], "b"),
+    Question(question_prompts[36], "a"),
+    Question(question_prompts[37], "b"),
+    Question(question_prompts[38], "c"),
 ]
 
 
@@ -251,7 +397,7 @@ def run_quiz(questions):
         print("Thank you.  Adding your score to the leaderboard...")
         scores = SHEET.worksheet('scores')
         scores.append_row(values=[name, score, dt_string, duration])
-        scores.sort((2, 'des'), (4, 'des'),)
+        scores.sort((2, 'des'), (4, 'asc'),)
         time.sleep(1)
         print("Leaderboard updated successfully!\n")
         print('''\u001b[32m======================================\u001b[0m''')
@@ -292,7 +438,8 @@ def start_game():
     Function to allow the player to choose what they want to do
     """
     print("What would you like to do today?\n")
-    answer = (input("a) Start a new game\nb) View the leaderboard\nc)Exit\n"))
+    answer = (input("a) Start a new game\nb) View the leaderboard\n \
+c)View the instructions\nd)Exit\n"))
 
     if answer == ("a"):
         print("Veena fredishay! Starting a new quiz...")
@@ -316,6 +463,24 @@ def start_game():
             print("Exiting the game...")
             time.sleep(1)
             game_over()
+    if answer == ("c"):
+        print("One moment please...")
+        time.sleep(1)
+        clear_terminal()
+        run_instructions()
+        time.sleep(5)
+        print("Would you like to play the game now?\n")
+        answer = (input("Press Y to start the game or any key to exit\n"))
+        if answer == ("y"):
+            print("Veena fredishay! Starting a new quiz...")
+            time.sleep(1)
+            clear_terminal()
+            run_quiz(questions)
+        else:
+            print("Exiting the game...")
+            time.sleep(1)
+            game_over()
+
     else:
         print("Exiting the game...")
         time.sleep(1)
