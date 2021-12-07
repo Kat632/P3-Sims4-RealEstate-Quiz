@@ -37,14 +37,14 @@ def game_over():
     Prints "Game Over" text and exits game.
     """
     print("\nThank you for playing! Dag dag!")
-    print("""
+    print('''\u001b[32m
  _____                        _____ 
 |  __ \                      |  _  |               
 | |  \/ __ _ _ __ ___   ___  | | | |_   _____ _ __ 
 | | __ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
 | |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |
  \____/\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|
-""")
+\u001b[0m''')
 
     time.sleep(3)
     sys.exit()
@@ -64,10 +64,10 @@ def run_instructions():
     print()
     print("1. All you need to do is press a, b or c for your answer.")
     print("2. The program will tell you if you are correct or incorrect.")
-    print("3. The program will add up your scores and tell the total.")
+    print("3. The program will add up your scores.")
     print("4. The program tells you your score at the end.")
-    print("4. The game is also timed.")
-    print("5. You will be able to save your score to the leaderboard.")
+    print("5. The game is also timed.")
+    print("6. You will be able to save your score to the leaderboard.")
     print()
     print('''\u001b[32m===========================================\u001b[0m''')
     print()
@@ -375,6 +375,8 @@ def run_quiz(questions):
         answer = input(sample.prompt).lower()
         if answer not in {'a', 'b', 'c'}:
             print('INVALID! Use \'a,\' \'b,\' or \'c\' for your response')
+            print('Moving on to next question...')
+            time.sleep(2)
         elif answer == sample.answer:
             score += 1
             time.sleep(2)
@@ -389,7 +391,7 @@ def run_quiz(questions):
     duration = str(round(toc - tic, 2))
     print("You got", score, "out of 10")
     time.sleep(1)
-    print(f"You completed the quiz in {toc - tic:0.4f} seconds")
+    print(f"You completed the quiz in {toc - tic:0.2f} seconds")
     time.sleep(2)
     print("\nWould you like to commit your score to the leaderboard, Y or N?")
     answer_end = input().lower()
@@ -439,8 +441,8 @@ def start_game():
     Function to allow the player to choose what they want to do
     """
     print("What would you like to do today?\n")
-    answer = (input("a) Start a new game\nb) View the leaderboard\n \
-c)View the instructions\nd)Exit\n"))
+    answer = (input("a) Start a new game\nb) View the leaderboard\n\
+c) View the instructions\nd) Exit\n"))
 
     if answer == ("a"):
         print("Veena fredishay! Starting a new quiz...")
@@ -451,7 +453,7 @@ c)View the instructions\nd)Exit\n"))
         print("Fetching the leaderboard...")
         time.sleep(1)
         clear_terminal()
-        print(tabulate(data[0:10], headers='firstrow', tablefmt='fancy_grid'))
+        print(tabulate(data[0:11], headers='firstrow', tablefmt='fancy_grid'))
         time.sleep(5)
         print("Would you like to play the game now?\n")
         answer = (input("Press Y to start the game or any key to exit\n"))
