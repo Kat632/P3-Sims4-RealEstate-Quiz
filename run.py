@@ -1,6 +1,8 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Developer: Katherine Biggs
+# Date of release: TBA
+# Subject: Code Institute Portfolio Project 3 - Python
+# Program Name: "The Sims 4 Real Estate Quiz"
+
 from datetime import datetime
 import time
 import random
@@ -29,7 +31,7 @@ def clear_terminal():
     """
     Clears terminal
     """
-    os.system('clear')
+    os.system('printf "\ec"')
 
 
 def game_over():
@@ -426,13 +428,16 @@ def run_quiz(questions):
                 run_quiz(questions)
         else:
             print("Exiting the game...")
-            time.sleep(1)
+            time.sleep(2)
+            clear_terminal()
             game_over()
     else:
         time.sleep(1)
         print("Ok, thank you for playing, " + name)
         time.sleep(1)
         print("Exiting the game...")
+        time.sleep(2)
+        clear_terminal()
         game_over()
 
 
@@ -464,7 +469,8 @@ c) View the instructions\nd) Exit\n"))
             run_quiz(questions)
         else:
             print("Exiting the game...")
-            time.sleep(1)
+            time.sleep(2)
+            clear_terminal()
             game_over()
     if answer == ("c"):
         print("One moment please...")
@@ -481,12 +487,14 @@ c) View the instructions\nd) Exit\n"))
             run_quiz(questions)
         else:
             print("Exiting the game...")
-            time.sleep(1)
+            time.sleep(2)
+            clear_terminal()
             game_over()
 
     else:
         print("Exiting the game...")
-        time.sleep(1)
+        time.sleep(2)
+        clear_terminal()
         game_over()
 
 
