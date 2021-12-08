@@ -49,6 +49,8 @@ def game_over():
 \u001b[0m''')
 
     time.sleep(3)
+    print("Click the blue button at the top to replay the game!")
+    print()
     sys.exit()
 
 
@@ -62,6 +64,11 @@ def run_instructions():
     """
     Prints the instructions for the game
     """
+    print("This game is based on the Sims 4, the social simulation video game,")
+    print("released in 2014.  If you have never played Sims 4, you may find")
+    print("this game difficult since it is a quiz game where all of the")
+    print("questions are based around real estate in Sims 4.")
+    print()
     print('''\u001b[32m===========================================\u001b[0m''')
     print()
     print("1. All you need to do is press a, b or c for your answer.")
@@ -108,7 +115,10 @@ name = input("Please enter your name:\n")
 time.sleep(1)
 clear_terminal()
 print('''\u001b[32m===============================================\u001b[0m''')
-print("Thank you for stopping by, " + name)
+if any(c.isalpha() for c in name):
+    print("Thank you for stopping by, " + name)
+else:
+    print("Thank you for stopping by, Guest")
 print('''\u001b[32m===============================================\u001b[0m''')
 
 
@@ -376,14 +386,17 @@ def run_quiz(questions):
     for sample in sampled_list:
         answer = input(sample.prompt).lower()
         if answer not in {'a', 'b', 'c'}:
+            print()
             print('INVALID! Use \'a,\' \'b,\' or \'c\' for your response')
             print('Moving on to next question...')
             time.sleep(2)
+            print()
         elif answer == sample.answer:
             score += 1
             time.sleep(2)
             print()
             print("Well done, you are correct!")
+            print()
         else:
             time.sleep(2)
             print()
@@ -407,7 +420,8 @@ def run_quiz(questions):
         print("Leaderboard updated successfully!\n")
         print('''\u001b[32m======================================\u001b[0m''')
         print("Press 'A' to restart the game\n")
-        print("Press 'B' to view the leaderboard\n")
+        print("Press 'B' to view the Top Ten scores\n")
+        print("Press 'M' to go back to the main menu\n")
         print("Or press any key to exit the game.")
         print('''\u001b[32m======================================\u001b[0m''')
         answer_final = input().lower()
@@ -420,12 +434,27 @@ def run_quiz(questions):
             print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
             time.sleep(5)
             print("Would you like to play the game now?\n")
-            answer = (input("Press Y to start the game or any key to exit\n"))
+            answer = (input("Press Y to start the game, M for main menu or any key to exit\n")).lower()
             if answer == ("y"):
                 print("Veena fredishay! Starting a new quiz...")
                 time.sleep(1)
                 clear_terminal()
                 run_quiz(questions)
+            if answer == ("m"):
+                print("Returning to main menu...")
+                time.sleep(1)
+                clear_terminal()
+                start_game()
+            else:
+                print("Exiting the game...")
+                time.sleep(2)
+                clear_terminal()
+                game_over()
+        if answer_final == "m":
+            print("Returning to main menu...")
+            time.sleep(1)
+            clear_terminal()
+            start_game()
         else:
             print("Exiting the game...")
             time.sleep(2)
@@ -445,9 +474,12 @@ def start_game():
     """
     Function to allow the player to choose what they want to do
     """
+    print('''\u001b[32m===============================================\u001b[0m''')
+    print()
     print("What would you like to do today?\n")
-    answer = (input("a) Start a new game\nb) View the leaderboard\n\
-c) View the instructions\nd) Exit\n"))
+    print('''\u001b[32m===============================================\u001b[0m''')
+    answer = (input("a) Start a new game\nb) View the Top Ten scores\n\
+c) View the instructions\nPress any other key to end the game\n").lower())
 
     if answer == ("a"):
         print("Veena fredishay! Starting a new quiz...")
@@ -461,12 +493,18 @@ c) View the instructions\nd) Exit\n"))
         print(tabulate(data[0:11], headers='firstrow', tablefmt='fancy_grid'))
         time.sleep(5)
         print("Would you like to play the game now?\n")
-        answer = (input("Press Y to start the game or any key to exit\n"))
+        print("Or would you like to go back to the main menu?\n")
+        answer = (input("Press Y to start the game, M for main menu or any key to exit\n")).lower()
         if answer == ("y"):
             print("Veena fredishay! Starting a new quiz...")
             time.sleep(1)
             clear_terminal()
             run_quiz(questions)
+        if answer == ("m"):
+            print("Returning to main menu...")
+            time.sleep(1)
+            clear_terminal()
+            start_game()
         else:
             print("Exiting the game...")
             time.sleep(2)
@@ -477,14 +515,20 @@ c) View the instructions\nd) Exit\n"))
         time.sleep(1)
         clear_terminal()
         run_instructions()
-        time.sleep(5)
+        time.sleep(8)
         print("Would you like to play the game now?\n")
-        answer = (input("Press Y to start the game or any key to exit\n"))
+        print("Or would you like to go back to the main menu?\n")
+        answer = (input("Press Y to start the game, M for main menu or any key to exit\n")).lower()
         if answer == ("y"):
             print("Veena fredishay! Starting a new quiz...")
             time.sleep(1)
             clear_terminal()
             run_quiz(questions)
+        if answer == ("m"):
+            print("Returning to main menu...")
+            time.sleep(1)
+            clear_terminal()
+            start_game()
         else:
             print("Exiting the game...")
             time.sleep(2)

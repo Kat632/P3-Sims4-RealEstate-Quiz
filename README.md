@@ -4,13 +4,13 @@
 
 The Sims 4 Real Estate Quiz is a browser-based game built in Python.  It is a game based on the incredibly popular Sims 4 game.
 
-The Sims 4 has a massive online community fan base, with hundreds of Youtube channels dedicated to playing the game.  BuzzFeed has quizzes for fans of the Sims to test their game knowledge, find out which townie they are most like, etc... https://www.buzzfeed.com/search?q=the%2Bsims&type=quiz ... so I thought it would be a fun idea to build a Sims 4 Real Estate Quiz for my project.  As far as I have been able to ascertain, no one has ever built a quiz based on Sims 4 real estate before, so actually I think my idea is quite unique.  
+The Sims 4 has a massive online community fan base, with hundreds of Youtube channels dedicated to playing the game.  [BuzzFeed](https://www.buzzfeed.com/search?q=the%2Bsims&type=quiz) has quizzes for fans of the Sims to test their game knowledge, find out which townie they are most like, etc... so I thought it would be a fun idea to build a Sims 4 Real Estate Quiz for my project.  As far as I have been able to ascertain, no one has ever built a quiz based on Sims 4 real estate before, so actually I think my idea is quite unique.  
 
 As the game was developed in Python for use in the terminal, it utilises the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
 
-![Screenshot of homepage]()
+![Screenshot of homepage](/assets/amiresponsive.png)
 
-[View the live website on Heroku]()
+[View the live website on Heroku](https://the-sims-4-real-estate-quiz.herokuapp.com/)
 Please note: To open any links in this document in a new browser tab, please press CTRL + Click.
 
 ## Table of Contents
@@ -36,7 +36,7 @@ Please note: To open any links in this document in a new browser tab, please pre
 
 * The Sims 4 Real Estate Quiz is intended to be a fun quiz to test a user's knowledge of who lives where and with whom at the start of a new game in the Sims 4.  At the start of a new game in Sims 4, most of the worlds are pre-populated with "Resident Townies" who live in pre-built houses.  This quiz is about those Sims and their houses.  This game is suitable for individual users looking to play a game for short or medium periods of time to test their knowledge of the Sims. Given the limitations of the terminal-based interface, care will need to be taken to incorporate visual stimulus, along with an engaging narrative to convey an element of fun to the user. 
 
-#### Site Goals
+### Site Goals
 
 * To provide users with a fun quiz game to play.
 * To provide users with a range of questions to test their knowledge.
@@ -54,7 +54,7 @@ Please note: To open any links in this document in a new browser tab, please pre
 * As there are certain restrictions in the scope of the development of the application, such as the terminal confines and methods of deployment. It will be important to ensure all functionality is contained within the game terminal screen.
 * Despite the confines of the terminal emulator, the site should site be visually stimulating and clear to the user that it is a game.
 * The user needs to know what their score is.
-* The user should be able to record their score on a leaderboard.
+* The user should be able to record their score on a leaderboard and be able to view that leaderboard.
 
 ### The Structure Plane
 
@@ -76,17 +76,17 @@ Acceptance Criteria:
 * The user should be able to add their score to the leaderboard and they should be able to choose to view the whole leader board.
 
 Implementation:
-* The user will have the ability to choose to add their score to the leaderboard at the end of the game and they will also be given the option to view the leaderboard.  This may need to be limited to the top ten scores on the leaderboard. 
+* The user will have the ability to choose to add their score to the leaderboard at the end of the game and they will also be given the option to view the leaderboard.  This may need to be limited to the top ten scores on the leaderboard.
 
 User Story:
 
 > As a user I want to play a quiz that is unique.
 
 Acceptance Criteria:
-* The user should be able to play the game multiple times without having too many of the same questions repeated.  The quiz will have ten questions, but these will be randomised from a much bigger bank of questions.
+* The user should be able to play the game multiple times without having too many of the same questions repeated.  The quiz will have ten questions, but these will be randomised from a much bigger bank of questions which can easily be expanded to incorporate the possibility of new worlds in the Sims 4.
 
 Implementation:
-* 
+
 * The user will also have the ability to exit a game at any point without quitting the application. This will allow the user to further control the time within the game.
 
 #### Opportunities
@@ -94,20 +94,22 @@ Implementation:
 Arising from user stories
 | Opportunities | Importance | Viability / Feasibility
 | ------ | :------: | :------: |
-| ** Provide a fun game environment ** | 5 | 5 |
-| ** Provide different difficulty levels ** | 5 | 5 |
-| ** Provide ability to control the time the game takes ** | 5 | 5 |
+| ** Provide a fun quiz game ** | 5 | 5 |
+| ** Provide a wide range of questions ** | 5 | 5 |
+| ** Provide ability to record scores and compare with others ** | 5 | 5 |
+
 
 ### The Skeleton Plane
 #### Wireframe mock-ups
 
-Given that the application will be run within a terminal emulator provided within the template, there are limited options available with regards to the layout of the webpage itself. Early on within the development of the theme, I located a suitable background graphic on iStock. To position the terminal appropriately for the background graphic, and keeping user experience in mind, I decided to centre the terminal horizontally on the screen. The run program button was centrally positioned to above the terminal window to emphasis its importance.
+Given that the application will be run within a terminal emulator provided within the template, there are limited options available with regards to the layout of the webpage itself. Early on within the development of the theme, I decided that I had to find a way of doing something to give the game a recognisable Sims look. I messed around for ages trying to get a background image to display, but I couldn't work out how to do it and in the end I figured it wasn't that important in the scope of the project brief.  I have managed to get a blue to green gradient onto the background though and the blue/green is reminiscent of the Sims 4 anyway.  
 
-![Home Page Wireframe]()
+I decided to centre the terminal horizontally on the screen because it feels like a nicer user experience. The run program button was centrally positioned above the terminal window to emphasise its importance.
 
-For the terminal window itself, I also produced a wireframe in the well-known design package Microsoft Excel. Whilst not traditionally used for this purpose, the terminal window dimensions of 80 columns wide by 24 rows high provided a restriction that I could duplicate in excel easily. This enabled me to work out the spacing requirements and dimensions of the elements on screen during the gameplay. Given that all the elements that would be displayed in the terminal are ASCII characters, creating an 80 x 24 grid in excel with one character per tile it enabled me to easily see if I could fit the total information required on each line. This was especially useful whilst calculating how to print the two game boards with a scoreboard in between them, given the line-by-line method in which the terminal prints.
+![Home Page Wireframe](/assets/p3_wireframe_1.png)
 
-![Terminal Game Play Wireframe]()
+Aside from the background gradient, I have also styled the Play Game button and coloured it the same blue as the Sims 4 logo (#4c5c98).
+
 
 #### Logic Flow
 
@@ -146,80 +148,74 @@ I will utilise a variety of methods on each class to play the game. The Game cla
 
 #### Design
 
-Once I was happy with the overall layout of the page, I created a full colour mock-up within Balsamiq.
-
-![Full Colour Mock-up]()
+See [The Skeleton Plane](#The-Skeleton-Plane)
 
 ## Features
 #### Welcome Screen
 
-![Welcome Screen](/assets/screenshots/welcome-screen.png)
+![Welcome Screen](/assets/start_game.png)
 
-At the start of game users are greeted with a welcome screen showing the game logo of a plumbob.  This is instantly recognisable to anyone who plays the Sims. The game asks the user if they would like to play a game, with instructions on how to start the game, or access the instructions.
+At the start of game users are greeted with a welcome screen showing the game logo of a plumbob.  This is instantly recognisable to anyone who plays the Sims. The game asks the user to please enter their name.
+
+![What do you want to do today Sreen](/assets/user_choice_first.png)
+
+Once a user has entered their name, the next screen greets the user and asks them what they would like to do today.  The options are a) Play the game, b) View the Top Ten leaderboard, c) View the instructions, or d) Exit the game.
 
 #### Instructions Screen
 
-![Instructions Screen]()
+![Instructions Screen](/assets/instructions.png)
 
-If users select the instructions option from the main menu the screen will display an overview of the story behind the game and the objective for the user. They are then presented the same message as the welcome screen asking if they would like to play a game.
+If users select the instructions option from the main menu the screen will display the objectives for the user. I've also included some Simlish translations in the instructions.  Most 'Simmers' (people who play The Sims) will be used to the little Simlish words in the game, but I appreciate that not everyone will be.
 
-#### Name Input Screen
+![Instructions Screen](/assets/instructions_2.png)
 
-![Name Input Screen]()
-
-When the user confirms that they would like to play the game, they are greeted by a message asking them to input their name.
-
-#### Game Screen
-
-![Game Screen]()
-
-Once the user has inputted their name, they are greeted on the next screen with a welcome message containing their name.
+Users are then presented the same message as the welcome screen asking if they would like to play a game.
 
 #### Questions Screen
 
-![Questions Screen]()
+![Questions Screen](/assets/questions_1.png)
 
-The game will then progress to the questions, with the user required to press enter to start. Once the user has indicated that they are ready, the first question will display.
+Once the user has indicated that they are ready, the first question will display.
 
-#### Correct Answer Screen
-
-![Correct Answer Screen]()
-
-If the user answers the question correctly, a message will be displayed informing them that they have answered correctly.  The user will also be informed of their current score.
+If the user answers the question correctly, a message will be displayed informing them that they have answered correctly.
 
 #### Incorrect Answer Screen
 
-![Incorrect Answer Screen]()
+![Incorrect Answer Screen](/assets/questions_incorrect_answer.png)
 
 If the user answers incorrectly, a message will be display informing them that they have answered incorrectly. The user will also be informed of their current score.
 
+#### Invalid Answer Screen
+
+![Invalid Answer Screen](/assets/questions_invalid_response.png)
+
+If the user inputs anything other than a, b or c as the answer to a question, a message will be display informing them that their answer is invalid. The game will then progress to the next question.
+
 #### End of Game Screen
 
-![End of Game Screen]()
+![End of Game Screen](/assets/end_game.png)
 
-The user will be asked a total of ten questions.  At the end of ten questions, a screen will be displayed informing them of their final score.  The user will also be asked if they would like to input their score to the leaderboard, restart the game or exit the game.
+The user will be asked a total of ten questions.  At the end of ten questions, a screen will be displayed informing them of their final score and how long it has taken them to answer the questions.  The user will also be asked if they would like to input their score to the leaderboard.
 
 #### Add score to Leaderboard Screen
 
-![Add score to Leaderboard Screen]()
+![Add score to Leaderboard Screen](/assets/commit_score.png)
 
 The user will be informed that their score is being added to the Leaderboard, then they will be asked if they wish to view the leaderboard, restart the game or exit the game.
 
 #### Leaderboard
 
-![Leaderboard]()
+![Leaderboard](/assets/leaderboard.png)
 
-This screen will display the leaderboard to the user.  The user will then be asked if they wish to restart the game or exit the game.
+This screen will display the leaderboard to the user.
 
-#### Restart the game
+![Leaderboard](/assets/leaderboard_after.png)
 
-![Restart the game]()
-
-The user should not be prompted to input their user name again
+The user will then be asked if they wish to start the game or exit the game.
 
 #### Exit Game Screen
 
-![Exit Game Screen]()
+![Exit Game Screen](/assets/end_game.png)
 
 This will thank the user for playing the game and hope they come back soon.  Happy Simming!
 
