@@ -51,8 +51,8 @@ Please note: To open any links in this document in a new browser tab, please pre
 ### The Scope Plane
 
 **Features planned:**
-* As there are certain restrictions in the scope of the development of the application, such as the terminal confines and methods of deployment. It will be important to ensure all functionality is contained within the game terminal screen.
-* Despite the confines of the terminal emulator, the site should site be visually stimulating and clear to the user that it is a game.
+* As there are certain restrictions in the scope of the development of the application, such as the terminal confines and methods of deployment, it will be important to ensure all functionality is contained within the game terminal screen.
+* Despite the confines of the terminal emulator, the site should site be visually stimulating and clear to the user that it is a game about the Sims.
 * The user needs to know what their score is.
 * The user should be able to record their score on a leaderboard and be able to view that leaderboard.
 
@@ -100,7 +100,7 @@ Arising from user stories
 
 
 ### The Skeleton Plane
-#### Wireframe mock-ups
+#### Wireframe mock-up
 
  I decided to centre the terminal horizontally on the screen because it feels like a nicer user experience. The run program button was centrally positioned above the terminal window to emphasise its importance.
 

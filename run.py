@@ -64,7 +64,7 @@ def run_instructions():
     """
     Prints the instructions for the game
     """
-    print("This game is based on the Sims 4, the social simulation video game,")
+    print("This game is based on Sims 4, the social simulation video game,")
     print("released in 2014.  If you have never played Sims 4, you may find")
     print("this game difficult since it is a quiz game where all of the")
     print("questions are based around real estate and worlds in Sims 4.")
@@ -434,7 +434,8 @@ def run_quiz(questions):
             clear_terminal()
             print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
             time.sleep(5)
-            answer = (input("Press Y to start the game, M for main menu, or any key to exit\n")).lower()
+            answer = (input("Press Y to start the game,\
+             M for main menu, or any key to exit\n")).lower()
             if answer == ("y"):
                 print("Veena fredishay! Starting a new quiz...")
                 time.sleep(1)
@@ -474,10 +475,10 @@ def start_game():
     """
     Function to allow the player to choose what they want to do
     """
-    print('''\u001b[32m===============================================\u001b[0m''')
+    print('''\u001b[32m==========================================\u001b[0m''')
     print()
     print("What would you like to do today?\n")
-    print('''\u001b[32m===============================================\u001b[0m''')
+    print('''\u001b[32m==========================================\u001b[0m''')
     answer = (input("a) Start a new game\nb) View the Top Ten scores\n\
 c) View the instructions\nPress any other key to end the game\n").lower())
 
@@ -492,7 +493,8 @@ c) View the instructions\nPress any other key to end the game\n").lower())
         clear_terminal()
         print(tabulate(data[0:11], headers='firstrow', tablefmt='fancy_grid'))
         time.sleep(5)
-        answer = (input("Press Y to start the game, M for main menu, or any key to exit\n")).lower()
+        answer = (input("Press Y to start the game,\
+         M for main menu, or any key to exit\n")).lower()
         if answer == ("y"):
             print("Veena fredishay! Starting a new quiz...")
             time.sleep(1)
@@ -514,7 +516,8 @@ c) View the instructions\nPress any other key to end the game\n").lower())
         clear_terminal()
         run_instructions()
         time.sleep(8)
-        answer = (input("Press Y to start the game, M for main menu or any key to exit\n")).lower()
+        answer = (input("Press Y to start the game,\
+         M for main menu or any key to exit\n")).lower()
         if answer == ("y"):
             print("Veena fredishay! Starting a new quiz...")
             time.sleep(1)
