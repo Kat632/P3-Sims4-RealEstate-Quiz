@@ -409,6 +409,7 @@ def run_quiz(questions):
     print(f"You completed the quiz in {toc - tic:0.2f} seconds")
     time.sleep(2)
     print("\nWould you like to commit your score to the leaderboard, Y or N?")
+    print("Or press any other key to exit the game.")
     answer_end = input().lower()
     if answer_end == "y":
         time.sleep(1)

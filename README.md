@@ -34,7 +34,7 @@ Please note: To open any links in this document in a new browser tab, please pre
 ## UX
 ### The Strategy Plane
 
-* The Sims 4 Real Estate Quiz is intended to be a fun quiz to test a user's knowledge of who lives where and with whom at the start of a new game in the Sims 4.  At the start of a new game in Sims 4, most of the worlds are pre-populated with "Resident Townies" who live in pre-built houses.  This quiz is about those Sims and their houses.  This game is suitable for individual users looking to play a game for short or medium periods of time to test their knowledge of the Sims. Given the limitations of the terminal-based interface, care will need to be taken to incorporate visual stimulus, along with an engaging narrative to convey an element of fun to the user. 
+* The Sims 4 Real Estate Quiz is intended to be a fun quiz to test a user's knowledge of who lives where and with whom at the start of a new game in the Sims 4.  At the start of a new game in Sims 4, most of the worlds are pre-populated with "Resident Townies" who live in pre-built houses.  This quiz is about those Sims and their houses.  This game is suitable for individual users looking to play a game for short or medium periods of time to test their knowledge of the Sims. Given the limitations of the terminal-based interface, care will need to be taken to incorporate visual stimulus, along with engaging questions that will be fun for any Sims player to answer.  A few of the questions are "faux-amis" meaning that the answer is not the obvious one and many questions will leave players of the Sims thinking, "Wow, I never knew that...", for example with the question about who lives in the cheapest house in the Sims 4.
 
 ### Site Goals
 
@@ -44,7 +44,7 @@ Please note: To open any links in this document in a new browser tab, please pre
 
 ### User Stories
 
-* As a user I want an new quiz about the Sims 4 to play.
+* As a user I want a new quiz about the Sims 4 to play.
 * As a user I want to be able to test my knowledge against other people.
 * As a user I want to play a quiz that is unique.
 
@@ -87,7 +87,7 @@ Acceptance Criteria:
 
 Implementation:
 
-* The user will also have the ability to exit a game at any point without quitting the application. This will allow the user to further control the time within the game.
+* The user will be able to interact with the game at other points too, such as viewing the leaderboard and the instructions.  The user will also be given multiple opportunities to exit the game.
 
 #### Opportunities
 
@@ -102,13 +102,9 @@ Arising from user stories
 ### The Skeleton Plane
 #### Wireframe mock-ups
 
-Given that the application will be run within a terminal emulator provided within the template, there are limited options available with regards to the layout of the webpage itself. Early on within the development of the theme, I decided that I had to find a way of doing something to give the game a recognisable Sims look. I messed around for ages trying to get a background image to display, but I couldn't work out how to do it and in the end I figured it wasn't that important in the scope of the project brief.  I have managed to get a blue to green gradient onto the background though and the blue/green is reminiscent of the Sims 4 anyway.  
-
-I decided to centre the terminal horizontally on the screen because it feels like a nicer user experience. The run program button was centrally positioned above the terminal window to emphasise its importance.
+ I decided to centre the terminal horizontally on the screen because it feels like a nicer user experience. The run program button was centrally positioned above the terminal window to emphasise its importance.
 
 ![Home Page Wireframe](/assets/p3_wireframe_1.png)
-
-Aside from the background gradient, I have also styled the Play Game button and coloured it the same blue as the Sims 4 logo (#4c5c98).
 
 
 #### Logic Flow
@@ -118,6 +114,7 @@ To begin to understand how I wanted the game to work, I prepared a couple of sli
 To develop the logical steps required within the game, along with gaining an understanding of how the different game elements would interact, I created a flow chart detailing the individual steps for the game. Given the scope of the game logic involved the full flow chart resulted in a large image. The full image can be viewed here [Logic Flow Diagram]()
 
 The game logic can be broken down into three distinction sections. The initial setup of the game, answering the question and checking the result before moving on to the next question. For ease of reference, I have broken up the logic flow diagram into these three sections.
+
 
 ##### Setup Logic
 
@@ -148,9 +145,16 @@ I will utilise a variety of methods on each class to play the game. The Game cla
 
 #### Design
 
-See [The Skeleton Plane](#The-Skeleton-Plane)
+Given that the application will be run within a terminal emulator provided within the template, there are limited options available with regards to the layout of the webpage itself. Early on within the development of the theme, I decided that I had to find a way of doing something to give the game a recognisable Sims look. I tried to get a background image to display, but I couldn't work out how to do it and in the end I figured it wasn't that important in the scope of the project brief.  Instead we have a blue to green gradient in the background.  The blue/green is reminiscent of the Sims 4 anyway.
+
+Aside from the background gradient, I have also styled the Play Game button and coloured it the same blue as the Sims 4 logo (#4c5c98).
+
+I also wanted to include a favicon because I felt it would help to make the site feel polished.  I attempted to use an image for the favicon, but I could not get it to work.  I suspect this is due to the limitations of the Code Institute template, thanks to my friends on Slack for the advice on this one.  In the end, I chose to put in a web-hosted favicon from [favicon.cc](https://www.favicon.cc/?action=icon&file_id=806995).
 
 ## Features
+
+Please note that the game code has changed slightly since these screenshots were taken.  A few extra lines of text have been removed pertaining to asking for user input and the user now has the ability to go back to the main menu after viewing the instructions and the leaderboard.
+
 #### Welcome Screen
 
 ![Welcome Screen](/assets/start_game.png)
@@ -169,7 +173,7 @@ If users select the instructions option from the main menu the screen will displ
 
 ![Instructions Screen](/assets/instructions_2.png)
 
-Users are then presented the same message as the welcome screen asking if they would like to play a game.
+Users are then presented the same message as the welcome screen asking if they would like to play a game. In the finished version of the site, the user can also choose to go back to the main menu or exit the game.
 
 #### Questions Screen
 
@@ -183,7 +187,7 @@ If the user answers the question correctly, a message will be displayed informin
 
 ![Incorrect Answer Screen](/assets/questions_incorrect_answer.png)
 
-If the user answers incorrectly, a message will be display informing them that they have answered incorrectly. The user will also be informed of their current score.
+If the user answers incorrectly, a message will be display informing them that they have answered incorrectly.
 
 #### Invalid Answer Screen
 
@@ -211,13 +215,13 @@ This screen will display the leaderboard to the user.
 
 ![Leaderboard](/assets/leaderboard_after.png)
 
-The user will then be asked if they wish to start the game or exit the game.
+The user will then be asked if they wish to start the game or exit the game.  In the finished version of the site, the user can also choose to go back to the main menu or exit the game.
 
 #### Exit Game Screen
 
 ![Exit Game Screen](/assets/end_game.png)
 
-This will thank the user for playing the game and hope they come back soon.  Happy Simming!
+This will thank the user for playing the game.  In the final version of the game, there is a message informing the user that they can press the blue button at the top to restart the game.
 
 ## Future Enhancements
 
@@ -227,15 +231,16 @@ Further expansion of The Sims 4 - There does not seem to be a Sims 5 game coming
 
 Further questions - At the moment there are 39 questions in the game.  I probably have enough information to write another 30 questions.  A wide variety of questions will result in less repetition of questions each time a user plays the game.
 
+
 ## Testing
 
 ### Testing Strategy
 
-I took a two-stage approach to testing the application. The first stage was continuous testing as the application was being developed. With the application being based within the terminal, it was straight forward to test functions and print statements as they were being developed using the terminal within the IDE. This involved writing functions and print statements to enable me to see check that the questions were being randomised correctly.
+I took a two-stage approach to testing the application. The first stage was continuous testing as the application was being developed. With the application being based within the terminal, it was straight forward to test functions and print statements as they were being developed using the terminal within the IDE. This involved writing functions and print statements to enable me to check that the questions were being randomised correctly and that the scores were being recorded to the leaderboard correctly.
 
 For the second stage of testing, I utilised a more formal structured approach and created a test schedule for the application which covered each logical cycle. I then proceeded to run through the manual tests I'd developed one at a time noting the result and recording any errors found. Where unexpected behaviour was encountered, the code was altered to correct the behaviour.
 
-The individual python files were also validated using [pep8online.com](http://pep8online.com/) further details are below.
+The individual python files were also validated using [pep8online.com](http://pep8online.com/), further details are below.
 
 #### Testing Overview
 
@@ -308,8 +313,8 @@ To deploy the project through Heroku I followed these steps:
 * In the Connect to GitHub section that appears, select the correct account, and enter the name of the repository and select search.
 * Once Heroku has located the repo select connect.
 * This will connect the repo to the app within Heroku. Below the Apps Connected to Heroku section will be the Automatic Deploys section.
-* In this section, confirm the correct branch of the repo is selected in the drop-down box, and then click the Enable Automatic Deploys button
-* This will ensure whenever you change something in the repo and push the changes to GitHub, Heroku will rebuild the app. If you prefer to do this manually you can utilise the manual deployment options further down. For this project I utilised the Automatic Deployment to enable me to check changes I made to the app as I developed it.
+* In this section, confirm the correct branch of the repo is selected in the drop-down box, and then click the Enable Automatic Deploys button if you wish to automatically deploy your site in Heroku every time you push changes to GitHub.
+* My preference was to do this manually, so I chose not to Enable Automatic Deploys and I updated my Heroku app periodically.
 * Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
 
 ## Credits
@@ -320,25 +325,14 @@ I looked at several different ways of building a quiz before I embarked on the h
 
 I learnt about various ways of timing in Python from this blog article on [Udacity](https://www.udacity.com/blog/2021/09/create-a-timer-in-python-step-by-step-guide.html).
 
-I was informed of a method to clear the terminal by reading a discussion about it on the Code Institute Slack.  The method comes from a Python cheat sheet provided by [coding4you](http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf).
+I was informed of a method to clear the terminal by reading a discussion about it on the Code Institute Slack.  The method I was using comes from a Python cheat sheet provided by [coding4you](http://www.coding4you.at/inf_tag/beginners_python_cheat_sheet.pdf).  However, my fellow student Helena Johannson (see below) pointed out that the terminal wasn't being completely cleared, so she set off looking for another method which she found on [askubuntu](https://askubuntu.com/questions/25077/how-to-really-clear-the-terminal).
+
+I learnt about the tabulate library in this article by [Towards Data Science](https://towardsdatascience.com/how-to-easily-create-tables-in-python-2eaea447d8fd).
+
+I learnt more about working with gspread by reading the [gspread documentation](https://docs.gspread.org/en/latest/user-guide.html).
 
 
 ### Content
-
-#### Background Image
-
-The background image was chosen from a selection of Sims 4 wallpapers at [Wallpaper Access](https://wallpaperaccess.com/the-sims-4#google_vignette).  I chose this image because it is instantly recognisable as being related to the Sims 4.
-
-The gradient for the background in the html is from [Egg Gradients](https://www.eggradients.com/category/green-blue-gradient) and it is called **Valyrian Steel**.
-
-
-#### Stack Overflow
-
-
-
-#### Haoyi's Programming Blog
-
-Whilst researching how to use different colours within the terminal I found Haoyi's programming blog which provided me with several ideas on how I could incorporate colours within the terminal. It can be found [here](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
 
 #### Wikipedia
 
@@ -348,21 +342,41 @@ Wikipedia was used as a reference point for details of the Sims franchise and de
 
 Carl's Sims 4 Guide has everything you could possibly need to know about The Sims 4.  I'm a big fan, but I don't know everything and again, I used it for information about the various worlds, neighbourhoods and families in The Sims 4.  [Carl's Sims 4 Guide](https://www.carls-sims-4-guide.com/).
 
+#### Background
+
+The gradient for the background in the html is from [Egg Gradients](https://www.eggradients.com/category/green-blue-gradient) and it is called **Valyrian Steel**.
+
+
+#### Text colours in terminal
+
+Whilst researching how to use different colours within the terminal I found Haoyi's programming blog which provided me with several ideas on how I could incorporate colours within the terminal. It can be found here [Haoyi's Programming Blog](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
+
+
 #### ASCII Art
 
 The image used to make the ASCII art was downloaded from [ClipArtMax](https://www.clipartmax.com/max/m2H7d3N4K9K9b1H7/).
 
-The program used to convert the image into ASCII art is at [Many Tools](https://manytools.org/hacker-tools/convert-images-to-ascii-art/)
+The program used to convert the image into ASCII art is at [Many Tools](https://manytools.org/hacker-tools/convert-images-to-ascii-art/).
 
-The Game Over ASCII art is from [here](https://en.rakko.tools/tools/68/).
+The Game Over ASCII art is from [Rakko Tools](https://en.rakko.tools/tools/68/).
+
 
 #### Questions
 
 All of the questions have been written by me.
 
+
 ### Acknowledgements
 
-I'd like to thank the following:
-* 
-* 
-* 
+I'd like to thank the following people:
+
+* [Helena Johansson](https://github.com/Odden69) for coming up with a better way to clear the terminal and for unfailing support in our Slack group (see below), as well as testing my game and finding the bugs in my code.
+* [Andrew Dempsey](https://github.com/andrewdempsey2018) for taking the time to play my game, look for bugs and make suggestions for further enhancements.  Your support is invaluable, as always.
+* The team from Code Institute's 2021 Retro Gaming Hackathon, ["Team Noiseland"](https://hackathon.codeinstitute.net/teams/73/) (including Helena and Andrew) need mentioning because they are fantastic and I'm glad I met you all on my first two weeks of the course.  I appreciate your support so much.
+* Dave Horrocks and Steven Darcy from the Portfolio 3 Slack Group.
+* My mentor Adegbenga Adeye.
+
+
+### Conclusion
+
+I have had a much nicer time buidling this Python project than I did with the previous project in JavaScript. I feel eager to dive deeper into the Python world and to keep learning it.
