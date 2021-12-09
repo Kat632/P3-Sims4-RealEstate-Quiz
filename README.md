@@ -111,35 +111,30 @@ Arising from user stories
 
 To begin to understand how I wanted the game to work, I prepared a couple of slides for my mentor and I in plain English.  I find it exceedingly helpful to plan in English before I start writing any code.  I used these slides to develop the logical flow of the game.
 
-To develop the logical steps required within the game, along with gaining an understanding of how the different game elements would interact, I created a flow chart detailing the individual steps for the game. Given the scope of the game logic involved the full flow chart resulted in a large image. The full image can be viewed here [Logic Flow Diagram]()
+To develop the logical steps required within the game, along with gaining an understanding of how the different game elements would interact, I created a flow chart detailing the individual steps for the game.
 
-The game logic can be broken down into three distinction sections. The initial setup of the game, answering the question and checking the result before moving on to the next question. For ease of reference, I have broken up the logic flow diagram into these three sections.
+The game logic can be broken down into three distinction sections. The initial setup of the game, answering the question and checking the result before moving on to the next question and the logic for displaying the leaderboard.  For ease of reference, I have broken up the logic flow diagram into these three sections.
+
+The flow diagrams have been prepared in [Visio](https://www.microsoft.com/en-gb/microsoft-365/visio/flowchart-software).
 
 
 ##### Setup Logic
 
-![Setup Logic]()
+![Setup Logic](/assets/game_start.png)
 
 ##### Question Logic and Validation
 
-![Question Logic]()
+![Question Logic](/assets/quiz_flow.png)
 
-##### Game Loop Logic
+##### Leaderboard Logic
 
-![End of Game Logic]()
+![Leaderboard Logic](/assets/write_data.png)
 
 #### Programming Paradigm
 
-I utilised an Object Orientated Programming approach to developing the game. One initial function will be utilised to establish the user's name. This data will then be used to establish the game instance. The game instance will be utilised to control the flow of the game, present data to the user and establish other objects as needed.
+I attempted to introduce the use of OOP (Object Oriented Programming).
 
-![Class Overview]()
-
-What objects will I use?
-What classes will I use?
-What methods on each class to play the game?
-
-
-I will utilise a variety of methods on each class to play the game. The Game class will contain methods for the general running of the game itself. The Player class will contain methods that will manipulate the data inputted by the user into game actions such as feedback about whether a question is correct or incorrect.
+I wanted to make sure that I included at least one class in the game, even though I don't fully understand the concept just yet.  I am comfortable enough using classes to build out a full application right now.  However, the application has room for expansion and refactoring.  I intend to revisit the project in the future in order to rewrite it using cleaner code blocks.
 
 ### The Surface Plane
 
@@ -149,7 +144,7 @@ Given that the application will be run within a terminal emulator provided withi
 
 Aside from the background gradient, I have also styled the Play Game button and coloured it the same blue as the Sims 4 logo (#4c5c98).
 
-I also wanted to include a favicon because I felt it would help to make the site feel polished.  I attempted to use an image for the favicon, but I could not get it to work.  I suspect this is due to the limitations of the Code Institute template, thanks to my friends on Slack for the advice on this one.  In the end, I chose to put in a web-hosted favicon from [favicon.cc](https://www.favicon.cc/?action=icon&file_id=806995).
+I also wanted to include a favicon because I felt it would help to make the site feel polished.  I attempted to use an image for the favicon, but I could not get it to work.  I suspect this is due to the limitations of the Code Institute template, thanks to my friends on Slack for the advice on this one.  In the end, I chose to put in a web-hosted favicon from [favicon.cc](https://www.favicon.cc/?action=icon&file_id=806995).  The limitation with this is that the favicon will not display in Internet Explorer.
 
 ## Features
 
@@ -238,38 +233,25 @@ Further questions - At the moment there are 39 questions in the game.  I probabl
 
 I took a two-stage approach to testing the application. The first stage was continuous testing as the application was being developed. With the application being based within the terminal, it was straight forward to test functions and print statements as they were being developed using the terminal within the IDE. This involved writing functions and print statements to enable me to check that the questions were being randomised correctly and that the scores were being recorded to the leaderboard correctly.
 
-For the second stage of testing, I utilised a more formal structured approach and created a test schedule for the application which covered each logical cycle. I then proceeded to run through the manual tests I'd developed one at a time noting the result and recording any errors found. Where unexpected behaviour was encountered, the code was altered to correct the behaviour.
+For the second stage of testing, I utilised a more formal structured approach and tested based on the earlier flow charts I had created to test the logical flows and expected outcomes of the game.
 
 The individual python files were also validated using [pep8online.com](http://pep8online.com/), further details are below.
 
-#### Testing Overview
+My Slack group (see Acknoledgements) helped me with the final debugging and made some excellent suggestions for enhancing the game, including returns to the main menu and using "Guest" as a user name if the user doesn't enter a name.
 
-Testing was divided into different sections to ensure everything was tested individually with test cases developed for each area.
-
-![Testing Schedule Overview]()
-
-A full detailed breakdown of the testing procedures and methodology can be found in the testing.md file [here](TESTING.md)
 
 #### Validator Testing
 
 * pep8online.com - I utilised [pep8online.com](http://pep8online.com/) to validate my python code. All python files were checked with no errors reported, other than 3 trailing white spaces which are caused by the Game Over ASCII art.  I made the decision to leave in the ASCII art because I believe it adds to the feel of the game.
 
 
-* Screenshots of the validator reports are here:
+* Screenshot of the validator report is here:
     * ![Screenshot of the pep8online validator tool results](/assets/pep8online.png "Screenshot of the pep8online validator tool results")
-    * []()
-    * []()
-    * []()
-    * []()
-    * []()
-    * []()
-    * []()
-    * []()
-    * []()
+
 
 #### Notable Bugs
 
-
+None as far as I know.
 
 #### Libraries Utilised
 
@@ -286,13 +268,13 @@ The datetime library was imported so that I could get the date and time of when 
 #### tabulate
 The tabulate library was imported so that I could exert some styling on the returned worksheet data and display it in a structured way to the user.
 #### gspread
-The gspread library was imported to enable reading and writing to a worksheet for the purpose of recording the high scores of users.  Gspread was also used in sorting the worksheet data so that only the top ten results are returned to the user.  I relied heavily on the [Gspread documentation]https://docs.gspread.org/_/downloads/en/v4.0.1/pdf/ in order to achieve what I needed.  I could have imported another library like Pandas, but I felt it was unnecessary.
+The gspread library was imported to enable reading and writing to a worksheet for the purpose of recording the high scores of users.  Gspread was also used in sorting the worksheet data so that only the top ten results are returned to the user.  I relied heavily on the [Gspread documentation](https://docs.gspread.org/_/downloads/en/v4.0.1/pdf/) in order to achieve what I needed.  I could have imported another library like Pandas, but I felt it was unnecessary.
 
 ## Deployment
 
 The site was deployed via Heroku, and the live link can be found here - [Game](https://the-sims-4-real-estate-quiz.herokuapp.com/).
 
-The project was developed utilising a Code Institute provided template.
+The project was developed utilising a **Code Institute** provided template.
 
 ### Project Deployment
 
