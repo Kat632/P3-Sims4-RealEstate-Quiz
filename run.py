@@ -435,7 +435,7 @@ def run_quiz(questions):
             print(tabulate(data, headers='firstrow', tablefmt='fancy_grid'))
             time.sleep(5)
             answer = (input("Press Y to start the game,\
-        M for main menu, or any key to exit\n")).lower()
+    M for main menu, or any key to exit\n")).lower()
             if answer == ("y"):
                 print("Veena fredishay! Starting a new quiz...")
                 time.sleep(1)
@@ -494,7 +494,7 @@ c) View the instructions\nPress any other key to end the game\n").lower())
         print(tabulate(data[0:11], headers='firstrow', tablefmt='fancy_grid'))
         time.sleep(5)
         answer = (input("Press Y to start the game,\
-    M for main menu, or any key to exit\n")).lower()
+M for main menu, or any key to exit\n")).lower()
         if answer == ("y"):
             print("Veena fredishay! Starting a new quiz...")
             time.sleep(1)
@@ -517,7 +517,7 @@ c) View the instructions\nPress any other key to end the game\n").lower())
         run_instructions()
         time.sleep(8)
         answer = (input("Press Y to start the game,\
-    M for main menu or any key to exit\n")).lower()
+M for main menu or any key to exit\n")).lower()
         if answer == ("y"):
             print("Veena fredishay! Starting a new quiz...")
             time.sleep(1)
