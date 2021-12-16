@@ -1,5 +1,5 @@
 # Developer: Katherine Biggs
-# Date of release: TBA
+# Date of release: 16th December 2021
 # Subject: Code Institute Portfolio Project 3 - Python
 # Program Name: "The Sims 4 Real Estate Quiz"
 

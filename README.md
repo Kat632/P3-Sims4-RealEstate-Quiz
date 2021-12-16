@@ -257,13 +257,13 @@ None as far as I know.
 
 Several python libraries were utilised to enable additional functionality within the application.
 
-##### time
+#### time
 The time library was imported to utilise the time.sleep functionality. This enabled me to incorporate specific time delays within the program which adds to the player experience by simulating the time between the player's answer and the computers response. Whilst only a small time delay occurs, I felt that it was a much better experience than the computer response appearing as soon as the user has pressed their answer key. 
-##### os
+#### os
 The os library was imported to enable me to add functionality to the terminal emulator which allowed me to clear the previous print statements. This provides a clearer and more structured experience for the user.
-##### random
+#### random
 The random library was imported to access the built in methods of generating a random selection for the quiz questions.
-##### datetime
+#### datetime
 The datetime library was imported so that I could get the date and time of when the user committed their score to the worksheet.  I thought this could be interesting in the future so that other users can see how long a high score has been there for.
 #### tabulate
 The tabulate library was imported so that I could exert some styling on the returned worksheet data and display it in a structured way to the user.
