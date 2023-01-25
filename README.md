@@ -10,7 +10,7 @@ As the game was developed in Python for use in the terminal, it utilises the Cod
 
 ![Screenshot of homepage](/assets/amiresponsive.png)
 
-[View the live website on Heroku](https://the-sims-4-real-estate-quiz.herokuapp.com/)
+[View the live website on Heroku](https://p3-sims4-realestate-quiz.onrender.com/)
 Please note: To open any links in this document in a new browser tab, please press CTRL + Click.
 
 ## Table of Contents
